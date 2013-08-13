@@ -21,6 +21,12 @@
             <img ng-src="{{picData}}" />
         </div>
     </div>
+    <div class="centerize">
+        <a class="topcoat-icon-button"  ng-click="getPic()">Get Pic</a>
+        <div ng-show="picData" ng-animate="'slide'">
+            <img ng-src="{{picData}}" />
+        </div>
+    </div>
 </div>
 
 <ng-include src="'partials/settingsOverlay.html'"></ng-include>

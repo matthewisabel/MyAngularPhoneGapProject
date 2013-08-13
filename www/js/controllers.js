@@ -89,6 +89,19 @@ function CameraCtrl($scope) {
         // Take picture using device camera and retrieve image as base64-encoded string
         navigator.camera.getPicture(onSuccess,onFail,options);
     }
+    
+    $scope.getPic = function() {
+        var options =   {
+            quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL,
+            sourceType: 0,      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
+            encodingType: 0     // 0=JPG 1=PNG
+        }
+        
+        navigator.camera.getPicture(onSuccess,onFail,options);
+        
+    }
+    
     var onSuccess = function(imageData) {
         console.log("On Success! ");
         $scope.picData = "data:image/jpeg;base64," +imageData;
